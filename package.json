@@ -14,14 +14,14 @@
   "nodemonConfig": {
     "verbose": true,
     "watch": [
-    "src/"
+      "src/"
     ],
     "ignore": [
-    "dist/*"
+      "dist/*"
     ],
     "ext": "ts",
     "exec": "npm start"
-    },
+  },
   "scripts": {
     "build": "lb-tsc",
     "build:watch": "lb-tsc --watch",
@@ -46,7 +46,6 @@
     "start": "node -r source-map-support/register .",
     "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
     "dev": "nodemon server.js"
-
   },
   "repository": {
     "type": "git"
@@ -66,18 +65,19 @@
     "@loopback/rest": "^8.0.0",
     "@loopback/rest-explorer": "^3.0.2",
     "@loopback/service-proxy": "^3.0.2",
+    "express": "^4.17.1",
     "loopback-connector-mongodb": "^5.4.0",
     "nodemon": "^2.0.6",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@loopback/build": "^6.2.5",
-    "source-map-support": "^0.5.19",
-    "@loopback/testlab": "^3.2.7",
-    "@types/node": "^10.17.37",
     "@loopback/eslint-config": "^10.0.1",
+    "@loopback/testlab": "^3.2.7",
+    "@types/express": "^4.17.8",
+    "@types/node": "^10.17.37",
     "eslint": "^7.10.0",
+    "source-map-support": "^0.5.19",
     "typescript": "~4.0.3"
   }
-
 }
