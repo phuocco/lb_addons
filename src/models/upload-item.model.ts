@@ -1,4 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
+import {Category} from './category.model';
+import {ItemType} from './item-type.model';
 
 @model({settings: {strict: false}})
 export class UploadItem extends Entity {
@@ -9,24 +11,18 @@ export class UploadItem extends Entity {
   })
   _id?: number;
 
-  @property({
-    type: 'number',
-    required: true,
-  })
+  @belongsTo(() => Category, {name: 'categoryID'})
+  category_id: number;
+
+  @belongsTo(() => ItemType, {name: 'itemID'})
   item_id: number;
+  // Define well-known properties here
 
   @property({
     type: 'number',
     required: true,
   })
   type_id: number;
-
-  @property({
-    type: 'number',
-    required: true,
-  })
-  category_id: number;
-
   @property({
     type: 'string',
     required: true,
@@ -100,6 +96,7 @@ export class UploadItem extends Entity {
 
   @property({
     type: 'boolean',
+    default: false
   })
   is_verify?: boolean;
 
@@ -108,12 +105,13 @@ export class UploadItem extends Entity {
   })
   create_time?: string;
 
+
   @property({
     type: 'number',
   })
   price?: number;
 
-  // Define well-known properties here
+
 
   // Indexer property to allow additional data
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
