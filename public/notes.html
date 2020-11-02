@@ -59,13 +59,10 @@
             let cell2 = row.insertCell(1);
             cell1.innerHTML = notes[i].title;
             cell2.innerHTML = notes[i].id || "aa";
-
-
             var option = document.createElement('option');
             option.text =  notes[i].title;
             option.value = notes[i].title;
             note.append(option);
-
           }
 
         }

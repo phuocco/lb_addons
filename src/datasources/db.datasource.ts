@@ -5,7 +5,11 @@ const config = {
   name: 'db',
   connector: 'mongodb',
   url: 'mongodb+srv://admin:master1371@addonstool.ytkli.mongodb.net/addons?retryWrites=true&w=majority',
-
+  host: 'addonstool-shard-00-02.ytkli.mongodb.net',
+  port: 27017,
+  user: 'admin',
+  password: 'master1371',
+  database: 'addons',
   useNewUrlParser: true
 };
 
